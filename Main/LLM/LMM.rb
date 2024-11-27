@@ -1,8 +1,37 @@
-require 'net/http'
-require 'uri'
-require 'json'
+#require 'net/http'
+#require 'uri'
+#require 'json'
+require 'google/cloud/language/v2/language_client.h'
+require '<iostream>'
 
-uri = URI.parse("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GOOGLEAPIKEY")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Enter your google api key here
+#GAPIKey = ""
+
+
+# commenting out this to test the google api gem 
+=begin
+
+uri = URI.parse("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + GAPIKey)
 request = Net::HTTP::Post.new(uri)
 request.content_type = "application/json"
 request.body = JSON.dump({
@@ -27,8 +56,7 @@ end
 
 # response.code
 # response.body
-# response.body("text")
-#response.json
 data = (response.body)
 
-p data("text")
+p data
+=end
