@@ -1,17 +1,3 @@
-=begin
-curl -X POST "https://api.groq.com/openai/v1/chat/completions" \
-     -H "Authorization: Bearer $GROQ_API_KEY" \
-     -H "Content-Type: application/json" \
-     -d '{"messages": [{"role": "user", "content": LMMContent}], "model": "whisper-large-v3-turbo"}'
-
-     
-  Code snipet conveted from a curl request to http using this wonderful site: https://jhawthorn.github.io/curl-to-ruby/
-
-=end
-
-
-
-#Mostly functional with response.body but I need to find a way to output just the text string from the output.
 require 'net/http'
 require 'uri'
 require 'json'
