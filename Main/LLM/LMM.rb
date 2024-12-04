@@ -24,7 +24,7 @@ require '<iostream>'
 
 
 
-# Enter your google api key here
+# Get a better solution.... I shouldnt put API keys in clear text
 #GAPIKey = ""
 
 
