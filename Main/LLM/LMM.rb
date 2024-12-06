@@ -1,34 +1,17 @@
-require 'net/http'
-require 'uri'
-require 'json'
+require "groq"
 
-uri = URI.parse("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=GOOGLEAPIKEY")
-request = Net::HTTP::Post.new(uri)
-request.content_type = "application/json"
-request.body = JSON.dump({
-  "contents" => [
-    {
-      "parts" => [
-        {
-          "text" => "Write a story about a magic backpack."
-        }
-      ]
-    }
-  ]
-})
+Groq.configuration.api_key = ""
+client = Groq::Client.new # uses ENV["GROQ_API_KEY"] and "llama3-groq-70b-8192-tool-use-preview"
+client = Groq::Client.new(api_key: "Groq.configuration.api_key", model_id: "llama3-8b-8192")
 
-req_options = {
-  use_ssl: uri.scheme == "https",
-}
+Groq.configure do |config|
+  config.api_key = "Groq.configuration.api_key"
+  config.model_id = "llama3-8b-8192"
+  
 
-response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-  http.request(request)
+  client = Groq::Client.new
+  client.chat("Hello, world!")
+
+
 end
-
-# response.code
-# response.body
-# response.body("text")
-#response.json
-data = (response.body)
-
-p data("text")
+#Groq gem github page https://github.com/drnic/groq-ruby
