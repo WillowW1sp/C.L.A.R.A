@@ -1,6 +1,6 @@
 require "groq"
-require "json"
-GROQ_API_KEY = "your api key here"
+require "tts"
+GROQ_API_KEY = "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"
 
 
 #these are irrelivant and just for initial tests
@@ -15,6 +15,21 @@ end
 client = Groq::Client.new
 
 #test chate, replace later with the text file from VTT
-client.chat("What is the best way to put an api key in a ruby program?") do |content|
-print content
+client.chat("why is the sky blue?") do |content|
+#print content
 end
+
+#resp = content
+#TTS Engine
+def say(word)
+  s = "#{word}"
+  repeatTimes = 1
+  s.play("en", repeatTimes)
+  puts
+  puts "Successfully Said: #{word}"
+end
+
+say(
+  client.chat("why is the sky blue?") do |content|
+  print content
+  end)
