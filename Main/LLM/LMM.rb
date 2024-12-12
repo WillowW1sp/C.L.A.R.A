@@ -1,5 +1,7 @@
 require "groq"
 require "tts"
+
+#eventually will be changed to an env var
 GROQ_API_KEY = "Your API KEY"
 
 
