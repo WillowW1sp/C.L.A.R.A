@@ -16,12 +16,12 @@ Groq.configure do |config|
 end
 client = Groq::Client.new
 
-#test chate, replace later with the text file from VTT
+#test chat, replace later with the text file from VTT
 client.chat("why is the sky blue?") do |content|
-#print content
+#filter only message content
+  ttseng = content
 end
 
-#resp = content
 #TTS Engine
 def say(word)
   s = "#{word}"
@@ -31,7 +31,4 @@ def say(word)
   puts "Successfully Said: #{word}"
 end
 
-say(
-  client.chat("why is the sky blue?") do |content|
-  print content
-  end)
+say(ttseng)
