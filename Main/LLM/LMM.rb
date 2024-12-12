@@ -1,6 +1,6 @@
 require "groq"
 require "tts"
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "Your API KEY"
 
 
 #these are irrelivant and just for initial tests
