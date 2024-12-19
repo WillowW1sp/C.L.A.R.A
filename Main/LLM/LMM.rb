@@ -1,13 +1,11 @@
 require "groq"
 require "tts"
+#require "OS.rb"
+
 
 #eventually will be changed to an env var
 GROQ_API_KEY = "Your API KEY"
 
-
-#these are irrelivant and just for initial tests
-#client = Groq::Client.new # uses ENV["GROQ_API_KEY"] and "llama-3.1-8b-instant"
-#client = Groq::Client.new(api_key: Groq.configuration.api_key, model_id: "llama-3.1-8b-instant")
 
 #configure api key and LLM model
 Groq.configure do |config|
@@ -23,6 +21,7 @@ client.chat("why is the sky blue?") do |content|
 end
 
 #TTS Engine
+#cant test this yet, need to get local instance setup first
 def say(word)
   s = "#{word}"
   repeatTimes = 1
